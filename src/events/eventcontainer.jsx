@@ -30,7 +30,7 @@ const filterEventByTitle = (string, events) => {
 
 export default class EventContainer extends Component {
   render() {
-    const { events, typeFilter, searchFilter, selectedEvent } = this.props;
+    const { events, typeFilter, searchFilter, selectedEvent, loading } = this.props;
 
     let showEvents = events;
 
@@ -52,7 +52,7 @@ export default class EventContainer extends Component {
     return (
       <div className="event-container">
         {
-          showEvents
+          !loading
           ? <div>
             {
               ldMap(showEvents, (event) =>
@@ -65,7 +65,7 @@ export default class EventContainer extends Component {
               )
             }
             </div>
-          : <p>events loading...</p>
+          : <div className="loader"></div>
         }
       </div>
     );
