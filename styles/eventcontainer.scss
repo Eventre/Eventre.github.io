@@ -7,6 +7,22 @@
   border-top-right-radius: 10px;
 }
 
+.loader {
+  border: 10px solid $loader-bg-color; /* Light grey */
+  border-top: 10px solid $loader-color; /* Blue */
+  border-radius: 50%;
+  padding: 20px;
+  width: 30px;
+  height: 30px;
+  @include loaderanimation;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /*re-adjust flex for smaller displays*/
 @media screen and (max-width: 800px) {
   .event-container {

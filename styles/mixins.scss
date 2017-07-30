@@ -25,3 +25,9 @@
   -webkit-transition-duration: $duration;
   transition-duration: $duration;
 }
+
+@mixin loaderanimation {
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+  -ms-animation: spin 2s linear infinite;
+}
